@@ -8,6 +8,31 @@
 //   placeholder="Please enter 6 symbols"
 // />
 
+const inputEl = document.querySelector('#validation-input');
+
+inputEl.addEventListener('input', onInputChange);
+inputEl.addEventListener('blur', onCountSimbol);
+
+// inputEl.getAttribute('data-length');
+// console.log(inputEl.getAttribute('data-length'));
+
+function onInputChange(event){
+   console.log(event.currentTarget.value.length);;
+}
+function onCountSimbol(event){
+   console.log(event);
+   if(event.currentTarget.value.length === inputEl.getAttribute('data-length')){
+      inputEl.classList.add('valid');
+   };
+   inputEl.classList.add('invalid');
+   }
+
+// function onCountSimbol(){
+// if(inputEl[data-length] === 6){
+//    inputEl.classList.add('valid');
+// };
+// inputEl.classList.add('invalid');
+// }
 // Яка кількість символів повинна бути в інпуті, зазначається в його атрибуті data-length.
 // Якщо введена правильна кількість символів, то border інпуту стає зеленим, якщо неправильна кількість - червоним.
 // Для додавання стилів використовуй CSS-класи valid і invalid, які ми вже додали у вихідні файли завдання.

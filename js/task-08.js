@@ -1,36 +1,44 @@
 // Напиши скрипт управління формою логіна.
 
-// <form class="login-form">
-//   <label>
-//     Email
-//     <input type="email" name="email" />
-//   </label>
-//   <label>
-//     Password
-//     <input type="password" name="password" />
-//   </label>
-//   <button type="submit">Login</button>
-// </form>
-const loginCollaction = {email: '', password: ''};
-const inputEl = document.querySelector('.login-form');
-inputEl.addEventListener('submit', onSubmitForm);
+// const form = document.querySelector('.login-form');
+// console.log(form);
+// form.addEventListener('submit', onSubmitForm);
+
+// function onSubmitForm(event){
+//    event.preventDefault();
+
+//    const {
+//       elements: { email, password }
+//       } = event.currentTarget;
+//       console.log(event.currentTarget.elements); 
+//    const formData = new FormData(event.currentTarget);
+//   const formElelments = event.currentTarget.elements;
+
+//    if(formElelments.email.value === "" || formElelments.password.value === "") {
+//       window.alert('Заповніть усі поля!');
+//    }
+//    console.log(`Email: ${email.value}, Password: ${password.value}`);
+//    event.currentTarget.reset();
+// }
+
+
+const form = document.querySelector('.login-form');
+console.log(form);
+form.addEventListener('submit', onSubmitForm);
 
 function onSubmitForm(event){
    event.preventDefault();
-   const formData = new FormData(event.currentTarget);
-  const formElelments = event.currentTarget.elements;
 
-   if(formElelments.email.value === "" || formElelments.password.value === "") {
+   const {
+      elements: { email, password }
+      } = event.currentTarget;
+
+   if(email.value === "" || password.value === "") {
       window.alert('Заповніть усі поля!');
    }
- 
-   formData.forEach((value, name) => {
-     loginCollaction.email = formElelments.email.value;
-     loginCollaction.password = formElelments.password.value;
-     return console.log(loginCollaction);
-    });
+   console.log(`Email: ${email.value}, Password: ${password.value}`);
+   event.currentTarget.reset();
 }
-
 
 // Обробка відправлення форми form.login-form повинна відбуватися відповідно до події submit.
 // Під час відправлення форми сторінка не повинна перезавантажуватися.

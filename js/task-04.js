@@ -12,25 +12,23 @@
 const refs = {
    decrimentButton : document.querySelector('[data-action="decrement"]'),
    incrementButton : document.querySelector('[data-action="increment"]'),
-   counterValue : document.querySelector('#value'),
+   counterValueLabele : document.querySelector('#value'),
 }
+let counterValue = 0;
+
 refs.decrimentButton.addEventListener('click', onDecrimentNumber);
 
 refs.incrementButton.addEventListener('click',onIncrementNumber);
 
-refs.counterValue.textContent = 0;
-
 function onDecrimentNumber(){
-  console.log("-");
-   refs.counterValue -= 1;
-   console.log(refs.counterValue);
-};
+counterValue -= 1;
+  refs.counterValueLabele.textContent = counterValue;
+}
 
-function onIncrementNumber(event){
-   console.log(event);
-   refs.counterValue.textContent += 1;
-   console.log(refs.counterValue);
-  
+function onIncrementNumber(){
+   counterValue += 1;
+  refs.counterValueLabele.textContent = counterValue;
+ 
 };
 
 

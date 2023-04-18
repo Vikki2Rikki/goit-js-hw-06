@@ -9,24 +9,27 @@
 // />
 
 const inputEl = document.querySelector('#validation-input');
-
-inputEl.addEventListener('input', onInputChange);
 inputEl.addEventListener('blur', onCountSimbol);
 
 // inputEl.getAttribute('data-length');
 // console.log(inputEl.getAttribute('data-length'));
 
-function onInputChange(event){
-   console.log(event.currentTarget.value.length);;
-}
+// function onInputChange(event){
+//    console.log(event.currentTarget.value.length);;
+// }
 function onCountSimbol(event){
    console.log(event);
-   if(event.currentTarget.value.length === inputEl.getAttribute('data-length')){
+   const validLength = inputEl.getAttribute('data-length');
+   console.log(validLength);
+   if(validLength === 6){
       inputEl.classList.add('valid');
-   };
-   inputEl.classList.add('invalid');
+   } else {
+      inputEl.classList.add('invalid');
    }
 
+   }
+
+   
 // function onCountSimbol(){
 // if(inputEl[data-length] === 6){
 //    inputEl.classList.add('valid');

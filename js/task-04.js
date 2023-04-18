@@ -21,7 +21,7 @@ refs.decrimentButton.addEventListener('click', onDecrimentNumber);
 refs.incrementButton.addEventListener('click',onIncrementNumber);
 
 function onDecrimentNumber(){
-counterValue -= 1;
+  counterValue -= 1;
   refs.counterValueLabele.textContent = counterValue;
 }
 

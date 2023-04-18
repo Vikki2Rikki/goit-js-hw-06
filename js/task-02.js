@@ -8,7 +8,7 @@ const ingredients = [
 ];
 
 
-const ingredientItemContainerEl = document.querySelector('.js-ingredients-item');
+const ingredientItemContainerEl = document.querySelector('#ingredients');
 
 const makeIngredientItem = ingredients => {
 return ingredients.map(element => {

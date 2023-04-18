@@ -1,53 +1,19 @@
-// Завдання 6
-// Напиши скрипт, який під час втрати фокусу на інпуті (подія blur), перевіряє його вміст щодо правильної кількості введених символів.
 
-// <input
-//   type="text"
-//   id="validation-input"
-//   data-length="6"
-//   placeholder="Please enter 6 symbols"
-// />
+let amount = 0;
 
 const inputEl = document.querySelector('#validation-input');
+
 inputEl.addEventListener('blur', onCountSimbol);
+inputEl.addEventListener('input', onCountSimbol);
 
-// inputEl.getAttribute('data-length');
-// console.log(inputEl.getAttribute('data-length'));
-
-// function onInputChange(event){
-//    console.log(event.currentTarget.value.length);;
-// }
 function onCountSimbol(event){
-   console.log(event);
-   const validLength = inputEl.getAttribute('data-length');
-   console.log(validLength);
-   if(validLength === 6){
-      inputEl.classList.add('valid');
+const string = event.currentTarget.value;
+amount = string.length;
+   if(amount !== 6){
+    inputEl.classList.add('invalid');
    } else {
-      inputEl.classList.add('invalid');
+   inputEl.classList.replace('invalid','valid');
    }
 
    }
 
-   
-// function onCountSimbol(){
-// if(inputEl[data-length] === 6){
-//    inputEl.classList.add('valid');
-// };
-// inputEl.classList.add('invalid');
-// }
-// Яка кількість символів повинна бути в інпуті, зазначається в його атрибуті data-length.
-// Якщо введена правильна кількість символів, то border інпуту стає зеленим, якщо неправильна кількість - червоним.
-// Для додавання стилів використовуй CSS-класи valid і invalid, які ми вже додали у вихідні файли завдання.
-
-// #validation-input {
-//   border: 3px solid #bdbdbd;
-// }
-
-// #validation-input.valid {
-//   border-color: #4caf50;
-// }
-
-// #validation-input.invalid {
-//   border-color: #f44336;
-// }

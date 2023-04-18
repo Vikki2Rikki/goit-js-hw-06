@@ -14,11 +14,31 @@ function getRandomHexColor() {
 // </div>
 
 // <div id="boxes"></div>
-function createBoxes(amount){
 
-}
+let amount;
 
 const controlsEl = document.querySelector('#controls');
+const inputEl = document.querySelector('input[type="number"]')
+const createBtn = document.querySelector('button[data-create]');
+const destroyBtn = document.querySelector('button[data-destroy]');
+const boxesContanerEl = document.querySelector('#boxes');
+
+inputEl.addEventListener('input', onInputAmount);
+
+function onInputAmount(amount){
+  return amount;
+}
+
+createBtn.addEventListener('click',createBoxes);
+
+function createBoxes(amount){
+for (let index = 0; index <= amount ; index++) {
+  const element = array[index];
+  
+  
+}
+}
+
 
 // Створи функцію createBoxes(amount), яка приймає один параметр - число. Функція створює стільки <div>, скільки вказано в amount і додає їх у div#boxes.
 

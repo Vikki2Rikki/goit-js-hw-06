@@ -23,21 +23,31 @@ const createBtn = document.querySelector('button[data-create]');
 const destroyBtn = document.querySelector('button[data-destroy]');
 const boxesContanerEl = document.querySelector('#boxes');
 
-inputEl.addEventListener('input', onInputAmount);
+const newBox = document.createElement('div');
+newBox.style.width = '30px';
+newBox.style.height = '30px';
+newBox.style.backgroundColor = getRandomHexColor();
+boxesContanerEl.append(newBox);
 
-function onInputAmount(amount){
-  return amount;
-}
 
-createBtn.addEventListener('click',createBoxes);
+inputEl.addEventListener
 
-function createBoxes(amount){
-for (let index = 0; index <= amount ; index++) {
-  const element = array[index];
-  
-  
-}
-}
+// inputEl.addEventListener('input', onInputAmount);
+
+// function onInputAmount(amount){
+//   return amount;
+// }
+
+// createBtn.addEventListener('click',createBoxes);
+
+// function createBoxes(onInputAmount){
+// for (let index = 0; index <= amount ; index++) {
+//   const element = array[index];
+//   console.log(onInputAmount());
+// }
+// }
+
+
 
 
 // Створи функцію createBoxes(amount), яка приймає один параметр - число. Функція створює стільки <div>, скільки вказано в amount і додає їх у div#boxes.

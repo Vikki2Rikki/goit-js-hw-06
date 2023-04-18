@@ -7,7 +7,6 @@ const ingredients = [
   'Condiments',
 ];
 
-
 const ingredientItemContainerEl = document.querySelector('#ingredients');
 
 const makeIngredientItem = ingredients => {

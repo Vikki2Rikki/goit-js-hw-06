@@ -7,15 +7,6 @@ function getRandomHexColor() {
 // Завдання 10 (виконувати не обов'язково)
 // Напиши скрипт створення і очищення колекції елементів. Користувач вводить кількість елементів в input і натискає кнопку Створити, після чого рендериться колекція. Натисненням на кнопку Очистити, колекція елементів очищається.
 
-// <div id="controls">
-//   <input type="number" min="1" max="100" step="1" />
-//   <button type="button" data-create>Create</button>
-//   <button type="button" data-destroy>Destroy</button>
-// </div>
-
-// <div id="boxes"></div>
-
-let amount;
 
 const controlsEl = document.querySelector('#controls');
 const inputEl = document.querySelector('input[type="number"]')
@@ -23,20 +14,37 @@ const createBtn = document.querySelector('button[data-create]');
 const destroyBtn = document.querySelector('button[data-destroy]');
 const boxesContanerEl = document.querySelector('#boxes');
 
-const newBox = document.createElement('div');
+let amount;
+
+// const newBox = document.createElement('div');
+// newBox.style.width = '30px';
+// newBox.style.height = '30px';
+// newBox.style.backgroundColor = getRandomHexColor();
+// boxesContanerEl.append(newBox);
+
+inputEl.addEventListener('input', onInputAmount);
+createBtn.addEventListener('click', onCreateBoxes);
+destroyBtn.addEventListener('click', onDestroyBoxes);
+
+function onInputAmount(){
+  amount = inputEl.value;
+return console.log(amount);;
+};
+
+function onCreateBoxes(){
+  for (let index = 0; index < amount; index++) {
+    //const element = array[index];
+    const newBox = document.createElement('div');
 newBox.style.width = '30px';
 newBox.style.height = '30px';
 newBox.style.backgroundColor = getRandomHexColor();
-boxesContanerEl.append(newBox);
+boxesContanerEl.append(newBox);  
+  }
+}
 
-
-inputEl.addEventListener
-
-// inputEl.addEventListener('input', onInputAmount);
-
-// function onInputAmount(amount){
-//   return amount;
-// }
+function onDestroyBoxes(){
+  boxesContanerEl.remove(newBox);
+}
 
 // createBtn.addEventListener('click',createBoxes);
 

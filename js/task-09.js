@@ -11,7 +11,7 @@ colorBtn.addEventListener('click', onChangeBackgroundColorPage);
 
 function onChangeBackgroundColorPage(event){
   document.body.style.backgroundColor = getRandomHexColor();
-console.log(document.body.style.backgroundColor);
+//console.log(document.body.style.backgroundColor);
  colorLabel.textContent = document.body.style.backgroundColor;
 }
 

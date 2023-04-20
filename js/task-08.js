@@ -11,7 +11,7 @@ function onSubmitForm(event){
       } = event.currentTarget;
 
    if(email.value === "" || password.value === "") {
-      window.alert('Заповніть усі поля!');
+     return window.alert('Заповніть усі поля!');
    }
    const personalData = { email: email.value, password: password.value};
    console.log(personalData);
